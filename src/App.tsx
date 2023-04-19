@@ -40,9 +40,9 @@ function App() {
           >
             Redux Toolkit
           </a>
-          ,<span> and </span>
+          ,<span className='text-3xl'> and </span>
           <a
-            className="App-link"
+            className="text-3xl"
             href="https://react-redux.js.org/"
             target="_blank"
             rel="noopener noreferrer"
