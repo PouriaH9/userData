@@ -90,7 +90,9 @@ const UserForm = () => {
               <label className="block  mb-2 text-white" htmlFor="biography">
                 Biography:
               </label>
-              <Field as="textarea" name="biography" />
+              <Field
+              className="w-full h-40 px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline resize-none"
+              as="textarea" name="biography" />
               {errors.biography && touched.biography && (
                 <div className="text-red-500 text-sm mt-1">
                   {errors.biography}
