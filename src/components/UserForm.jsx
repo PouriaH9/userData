@@ -1,5 +1,8 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -100,14 +103,12 @@ const UserForm = () => {
                 Birthday:
               </label>
 
-              {/* <DatePicker
-                name="birthday"
-                value={birthday}
-                onChange={setBirthday}
-                isGregorian={false}
-                timePicker={false}
-                placeholder=""
-              /> */}
+              <DatePicker
+                className="rtl:pr-4 p-2"
+                calendar={persian}
+                locale={persian_fa}
+                calendarPosition="bottom-right"
+              />
               {errors.birthday && touched.birthday && (
                 <div className="text-red-500 text-sm mt-1">
                   {errors.birthday}
@@ -116,7 +117,7 @@ const UserForm = () => {
             </div>
 
             <button
-              className="block font-bold mb-2 text-white border border-2 py-2 px-5 rounded"
+              className="block font-bold mb-2 text-white border-2 py-2 px-5 rounded"
               type="submit"
               disabled={isSubmitting}
             >
